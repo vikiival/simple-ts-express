@@ -1,11 +1,11 @@
-import express from 'express'
+import express, { json } from 'express'
 import cors from 'cors'
 import consola from 'consola'
 
 import { dummyHandler, handlerWithBody, handlerWithParams } from './handlers'
 
 const app = express()
-app.use([cors(), express.json()])
+app.use([cors(), json()])
 const port = 3003
 
 app.get('/hello/:name', handlerWithParams)
