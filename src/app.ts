@@ -1,5 +1,7 @@
 import express from 'express'
 import cors from 'cors'
+import consola from 'consola'
+
 import { dummyHandler, handlerWithBody, handlerWithParams } from './handlers'
 
 const app = express()
@@ -11,7 +13,7 @@ app.get('/', dummyHandler)
 app.get('/post', handlerWithBody)
 
 app.listen(port, () => {
-  console.log(
+  consola.log(
     `~~~ [${new Date().toLocaleTimeString()}] Express running: ${port} ~~~.`
   )
 })
